@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     
+<<<<<<< HEAD
 
     function drawLinearEquation(A, B, C) {
         var canvas = document.getElementById('canvas');
@@ -124,6 +125,12 @@ document.addEventListener("DOMContentLoaded", function () {
         var norm = Math.sqrt(A * A + B * B);
         return { A: A / norm, B: B / norm, C: C / norm };
     }
+=======
+    document.getElementById('moveButton').addEventListener('click', () => {
+        //draw move result
+        
+    });
+>>>>>>> 2ab7e70986d6afe7326b37f6a8a903646b04bffa
 
 
 });
