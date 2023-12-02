@@ -110,7 +110,9 @@ document.getElementById("changeColorButton").addEventListener("click", () => {
 
 document.getElementById('Predmety').addEventListener('click', () => {
     document.getElementById('fractals-page').style.display = 'none';
-    document.getElementById('colors-page').style.display = 'grid';
+    document.getElementById('colors-page').style.display = document.getElementById('colors-page').style.display === 'none' ? 'grid' : 'none';
+    document.getElementById('movement-page').style.display = document.getElementById('movement-page').style.display === 'none' ? 'grid' : 'none';
+
 });
 
 

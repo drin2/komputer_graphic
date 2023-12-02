@@ -128,16 +128,27 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            return;
         }
-        const svg = document.getElementById('fractal');
-        const svgData = new XMLSerializer().serializeToString(svg);
-        const blob = new Blob([svgData], { type: "image/svg+xml" });
-        const element = document.createElement("a");
-        element.download = "w3c.svg";
-        element.href = window.URL.createObjectURL(blob);
-        element.click();
-        element.remove();
+        else if (document.getElementById('fractals-page').style.display === 'grid') {
+            const svg = document.getElementById('fractal');
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const blob = new Blob([svgData], { type: "image/svg+xml" });
+            const element = document.createElement("a");
+            element.download = "w3c.svg";
+            element.href = window.URL.createObjectURL(blob);
+            element.click();
+            element.remove();
+        }else {
+            var canvas = document.getElementById('movementCanvas');
+            var dataUrl = canvas.toDataURL();
+            var link = document.createElement('a');
+            link.download = 'movement_image.png';
+            link.href = dataUrl;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
     }
       
     document.getElementById('saveSVGButton').addEventListener('click', saveSvgAsImage);

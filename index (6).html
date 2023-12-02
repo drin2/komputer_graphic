@@ -101,7 +101,7 @@
                 </div>
             </div>
 
-            <div id="render-button-div">
+            <div class="render-button-div">
                 <button id="saveSVGButton">
                     Save SVG
                 </button>
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-    <div class="grid-container-colors" id="colors-page" >
+    <div class="grid-container-colors" id="colors-page" style="display: none;">
 
         <div class="info-container-fractals">
             <h1>Хімія</h1>
@@ -157,24 +157,19 @@
             <input type="number" id="value" min="0" max="100" step="1" value="100"  class="input-input"/>
             <br>
             <button onclick="changeColorOnFragment()">Змінити колір</button>
-
-
         </div>
         
         <div class="colors-container-one">
             <canvas id="canvasColors"></canvas>
         </div>
        
-
         <div class="colors-container-two">
-            <canvas id="canvasColorsResult"></canvas>
-            
+            <canvas id="canvasColorsResult"></canvas> 
         </div>
-
     </div>
 
-    <div class="grid-container-colors" id="movement-page" >
 
+    <div class="grid-container-colors" id="movement-page">
         <div class="info-container-fractals">
             <h1>Фізика</h1>
             <h2 style="font-weight:normal;">Рух</h2>
@@ -182,15 +177,41 @@
 
         <div class="inputs-container" style="grid-row: 2/5; justify-content: space-around;">
             
+            <p style="margin-left: 20px; font-size: 100%;">First Vertex Coordinates</p>
+            <label class="input-label" for="firstVertexX">X: </label>
+            <input class="input-input" type="number" id="firstVertexX"/> 
+            <label class="input-label" for="firstVertexY">Y: </label>
+            <input class="input-input" type="number" id="firstVertexY"/> 
+            <br>
+            <br>
+            <p style="margin-left: 20px; font-size: 100%;">Second Vertex Coordinates</p>
+            <label class="input-label" for="secondVertexX">X: </label>
+            <input class="input-input" type="number" id="secondVertexX"/> 
+            <label class="input-label" for="secondVertexY">Y: </label>
+            <input class="input-input" type="number" id="secondVertexY"/> 
+            <br>
+            <br>
+            <br>
+            <label class="input-label" for="trianglesHeight">Height of the Triangle: </label>
+            <input class="input-input" type="number" id="trianglesHeight"/> 
+
+            <div class="render-button-div" style="margin-top: 30%;">
+                <button id="saveSVGButton">
+                    Save SVG
+                </button>
+                <button id="moveButton">
+                    Move
+                </button>
+            </div>
         </div>
        
-
-        <div class="colors-container-two">
-            <canvas></canvas>
-            
+        <div class="movement-container">
+            <canvas id="movementCanvas"></canvas>
         </div>
-
+    
     </div>
+
+
 
 
 </body>
