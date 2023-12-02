@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     document.getElementById('moveButton').addEventListener('click', () => {
         //draw move result
+        
     });
 
 
