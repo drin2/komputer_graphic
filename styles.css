@@ -1,0 +1,282 @@
+body {
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  }
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr) 0.05fr;
+  padding: 10px;
+  height: 95vh; 
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.grid-container-colors{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr) 0.05fr;
+  padding: 10px;
+  height: 95vh; 
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.info-container-fractals {
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 20px;
+  border: 4px solid #D1729D;
+  text-align: center;
+}
+
+.inputs-container {
+  grid-column: 1;
+  grid-row: 2/4;
+  border-radius: 20px;
+  border: 4px solid #D1729D;
+  align-items: center;
+}
+
+.fractals-container {
+  grid-column: 2 / 4;
+  grid-row: 1/4;
+  border-radius: 20px;
+  border: 4px solid #D1729D;
+  height: 100%;
+  overflow: hidden;
+}
+
+.colors-container-one {
+  grid-column: 2 / 3;
+  grid-row: 1/5;
+  border-radius: 20px;
+  border: 4px solid #D1729D;
+  height: 100%;
+  overflow: hidden;
+}
+
+.colors-container-two {
+  grid-column: 3 / 4;
+  grid-row: 1/5;
+  border-radius: 20px;
+  border: 4px solid #D1729D;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 5vh;
+  background-color: #D1729D;
+}
+
+.logo-nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+.logo img {
+  width: 100px; /* Adjust the size of the main icon */
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-bar li {
+  margin-right: 20px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.account-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-right: 10px;
+  place-items: center;
+  margin-top: 10px;
+}
+
+.avatar-class img{
+  width: 40px; /* Adjust the size of the avatar icon */
+  height: 40px; /* Ensure the image is square */
+  border-radius: 50%; /* Create a circular avatar */
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#fractal {
+  width: 100%;
+  height: 100%;
+}
+
+
+#renderButton {
+  height: 40px;
+  width: 190px;
+  border-radius: 30px;
+  background-color: #D1729D;
+}
+
+#changeColorButton {
+  margin-left: auto;
+  margin-top: 20px;
+  height: 40px;
+  width: 80%;
+  border-radius: 30px;
+  background-color: #D1729D;
+}
+#saveSVGButton {
+  margin-right: 10px;
+  height: 40px;
+  width: 190px;
+  border-radius: 30px;
+  border-color: #D1729D;
+  color: #D1729D;
+}
+
+#resetToDefault {
+  margin-right: 10px;
+  height: 40px;
+  width: 190px;
+  border-radius: 30px;
+  border-color: #D1729D;
+  color: #D1729D;
+}
+
+#fractalType {
+  padding-top: 30px;
+  height: 10vh;
+}
+
+#inputs-divs {
+  height: 30vh;
+}
+
+#render-button-div {
+  height: 10vh;
+  width: 80%;
+  align-content: center;
+  margin-left: 9%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+select {
+  background-color: #D1729D50;
+  border: 10px;
+  border-color: black;
+  width: 80%;
+  margin-top:10px;
+  margin-left: 20px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  height: 40px;
+}
+
+label {
+  margin-left: 20px;
+  margin-bottom: 40px;
+  
+}
+input {
+  margin-left: 20px;
+}
+
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#canvasColors {
+  width: 100%; 
+  height: 100%; 
+}
+
+#canvasColorsResult {
+  width: 100%;
+  height: 100%;
+}
+.input-label {
+  display: inline;
+  margin-bottom: 8px; 
+  margin-top: 5px; 
+  width: 50%;
+}
+
+.input-input {
+  width: 30%; 
+  padding: 8px; 
+  margin-top: 5px; 
+  margin-bottom: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box;
+}

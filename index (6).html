@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <script src="scriptColors.js"></script>
+    <script src="scriptColorFragment.js"></script>
+
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-nav-bar">
+            <div class="logo">
+                <img src="mainlogo.png" alt="Logo">
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#">Новини</a></li>
+                    <li><a href="#" id="Predmety">Предмети</a></li>
+                    <li><a href="#">Для Батьків</a></li>
+                    <li><a href="#">Колектив</a></li>
+                    <li><a href="#">Гуртки</a></li>
+                    <li><a href="#">Про Нас</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="account-section">
+            <div class="user-info">
+                <div class="user-name">
+                    <span class="user-name">Іван Багряний</span>
+                </div>
+                <div class="avatar-class">
+                    <img src="icon.jpg" alt="Avatar">
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="grid-container" id="fractals-page" style="display: none;">
+
+        <div class="info-container-fractals">
+            <h1>Фізкультура</h1>
+            <h2 style="font-weight:normal;">Фрактали</h2>
+        </div>
+
+        <div class="inputs-container">
+
+            <div id="fractalType">
+                <label for="fractalTypeSelect">Виберіть вид фракталу:</label>
+                <select name="fractalTypeSelect" id="fractalTypeSelect">
+                  <option value="koch-snowflake">Сніжинка Коха</option>
+                  <option value="tan-frac">Tan(z^2)*z Фрактал</option>
+                  <option value="tricorn-frac">Tan(z^3)*z Фрактал</option>
+                  <option value="mandelbrot-frac">Mandelbrot Фрактал</option>
+                  
+                </select>
+            </div>
+
+            <div id="inputs-divs">
+                <div id="kochInputs">
+                    <label>Виберіть базову фігуру:</label>
+                    <div>
+                    <input type="radio" id="radioTriangle" name="contact" value="triangle" checked/>
+                    <label for="contactChoice1">Трикутник</label>
+            
+                    <input type="radio" id="radioCube" name="contact" value="cube" />
+                    <label for="contactChoice2">Квадрат</label>
+                    </div>
+
+                    <div>
+                        <label for="iterations">Ітерації:</label>
+                        <br>
+                        <input type="range" id="iterations" name="iterations" min="0" max="6" step="1" value="0"/> 
+                        <output id="iterationsValue"></output>
+                    </div>
+            
+                    <div>
+                        <label for="divisionRatio">Відношення розбиття сторони:</label>
+                        <br>
+                        <input type="range" id="divisionRatio" name="divisionRatio" min="0.1" max="0.6" step="0.01" value="0.5"/> 
+                        <output id="divisionRatioValue"></output>
+                    </div>
+                </div>
+            
+                <div id="tgInputs" hidden>
+                    <div>
+                        <label for="scale">Scale:</label>
+                        <br>
+                        <input type="range" id="scale" name="scale" min="1" max="4" step="1" value="1"/> 
+                        <output id="scaleValue"></output>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div id="render-button-div">
+                <button id="saveSVGButton">
+                    Save SVG
+                </button>
+                <button id="renderButton">
+                    Render
+                </button>
+            </div>
+        </div>
+        
+        <div class="fractals-container">
+            <div class="svg-container">
+                <svg id="fractal" xmlns="http://www.w3.org/2000/svg">
+                </svg>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container-colors" id="colors-page" >
+
+        <div class="info-container-fractals">
+            <h1>Хімія</h1>
+            <h2 style="font-weight:normal;">Кольори</h2>
+        </div>
+
+        <div class="inputs-container" style="grid-row: 2/5; justify-content: space-around;">
+            
+            <label class="input-label" for="magenta-saturation">Magenta saturation:</label>
+            <input class="input-input" type="number" id="magenta-saturation" min="0" max="1" step="0.01" value="0.5"/> 
+
+            <br>
+            <label for="green-saturation" class="input-label">Green saturation:</label>
+            <input type="number" id="green-saturation" min="0" max="1" step="0.01" value="0.5"  class="input-input"/> 
+      
+            <br>
+            <button id="saveSVGButton">Save SVG</button>
+            <button id="resetToDefault">Reset to default</button>
+            <br>
+            <button id="changeColorButton">Make transition</button>
+            <br>
+            <textbox id="color-hsv"></textbox>
+            <br>
+            <textbox id="color-cmyk"></textbox>
+
+            <h3 style="font-weight:normal; margin-top: -10px;">Fragment Attributes:</h3>
+            <label for="hue" class="input-label">Відтінок (Hue):</label>
+            <input type="number" id="hue" min="0" max="360" step="1" value="0" class="input-input"/>
+            <br>
+            <label for="saturation"class="input-label">Насиченість (Saturation):</label>
+            <input type="number" id="saturation" min="0" max="100" step="1" value="100"  class="input-input"/>
+            <br>
+            <label for="value"class="input-label">Яскравість (Value):</label>
+            <input type="number" id="value" min="0" max="100" step="1" value="100"  class="input-input"/>
+            <br>
+            <button onclick="changeColorOnFragment()">Змінити колір</button>
+
+
+        </div>
+        
+        <div class="colors-container-one">
+            <canvas id="canvasColors"></canvas>
+        </div>
+       
+
+        <div class="colors-container-two">
+            <canvas id="canvasColorsResult"></canvas>
+            
+        </div>
+
+    </div>
+
+    <div class="grid-container-colors" id="movement-page" >
+
+        <div class="info-container-fractals">
+            <h1>Фізика</h1>
+            <h2 style="font-weight:normal;">Рух</h2>
+        </div>
+
+        <div class="inputs-container" style="grid-row: 2/5; justify-content: space-around;">
+            
+        </div>
+       
+
+        <div class="colors-container-two">
+            <canvas></canvas>
+            
+        </div>
+
+    </div>
+
+
+</body>
+</html>
